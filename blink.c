@@ -19,15 +19,24 @@
 #define _XTAL_FREQ 4000000          //select oscillator freqency as 4MHZ
 #include <xc.h>                
 
-void main(void) {
+void main(void) 
+{
+    TRISC =0x00;                                   //Make PortC output using data direction register
+    PORTC=0x00;                                  //write 0 to all port
+    TRISB =0x00;                                   //Make PortB output using data direction register
+    PORTB=0x00;                                  //write 0 to all port
     TRISA =0x00;                                   //Make PortA output using data direction register
     PORTA=0x00;                                  //write 0 to all port
     ADCON1=0x07;                              //make portA pins digital I/O
 
     while(1)                                           //for repeating code infinitely 
     {
+        PORTC=0x00;  
+        PORTB=0x00;  
         PORTA=0x00;
         __delay_ms(1000);                      //delay of 1ms
+        PORTC=0xFF;
+        PORTB=0xFF;
         PORTA=0xFF;
         __delay_ms(1000);
     }
