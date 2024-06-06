@@ -32,7 +32,7 @@ void main(void)
             PORTB=1<<i;                           //shift bit downwards in PORTB
             
             PORTC=0x80>>i;                      //shift bit upwards in PORTC
-            __delay_ms(100);                      //delay of 1ms
+            __delay_ms(1000);                      //delay of 1ms
         
         
         }
@@ -41,7 +41,7 @@ void main(void)
              PORTB=0x80>>i;                     //shift bit upwards in PORTB
             
             PORTC=1<<i;                           //shift bit downwards in PORTC
-            __delay_ms(100);                      //delay of 1ms
+            __delay_ms(1000);                      //delay of 1ms
           
          } 
                 
